@@ -14,11 +14,11 @@
 
 Решил протестировать систему приема сообщений на уязвимость XSS. Закинул тестовый payload себе в поздравления:
 
-![01ff57a79a0dcad0b6ea900974bdbff2.png](89bc584a63294eefbef21d3c22d51a36.png)
+![01ff57a79a0dcad0b6ea900974bdbff2.png](test_xss.png)
 
 Если на сайте присутствует уязвимость XSS, то мой код выполнится и слово "Получилось" будет красным.
 
-![c1952e4ca063fe04ea7147ae74a0c93b.png](14317a9fc19b49a5a8edab2af2292bd6.png)
+![c1952e4ca063fe04ea7147ae74a0c93b.png](xss_successful.png)
 
 Получилось.
 
@@ -26,7 +26,7 @@
 
 Смотрю на запрос отправки сообщения:
 
-![d0e63b832fa8e679ec6de31fb215b334.png](5b33abac634641848e5c3a9a3e97a504.png)
+![d0e63b832fa8e679ec6de31fb215b334.png](post_request.png)
 
 Поле `username` используется для указания ника собеседника, `congr` для указания самого сообщения.
 
@@ -37,29 +37,29 @@
 ```
 Тестирую на себе:
 
-![58520ebb793637c0a39e027f02d1a2b8.png](d810864aa54e4c43979bd3ab4fe6d417.png)
+![58520ebb793637c0a39e027f02d1a2b8.png](test_xss_payload.png)
 
-![8ee3a460d9ed68237c0bbb55d90f535e.png](88c87f3349654e118c522e5305989691.png)
+![8ee3a460d9ed68237c0bbb55d90f535e.png](xss_payload_test_successful.png)
 
 Работает!
 
 Отправляю админу:
 
-![6dedd39a049aa10e189e4f572d42f2ed.png](dbc705998b694f348cdbb4776aca0f31.png)
+![6dedd39a049aa10e189e4f572d42f2ed.png](send_payload_to_admin.png)
 
-![7fcc9160723edca6e84af57a1e588130.png](0b322daedf7342e1b894ef1d33ecf9bd.png)
+![7fcc9160723edca6e84af57a1e588130.png](admin_cookies.png)
 
 Получил куки, подставил.
 
-![417f816693ec6c84653fe17531d90468.png](8ecd36eb852640cfa1864f04bc97d4af.png)
+![417f816693ec6c84653fe17531d90468.png](cookies.png)
 
-![f07417e63fc409536b22212ef69b17b0.png](bcbd3ac5a43446a4a66bfa2820e2cc1a.png)
+![f07417e63fc409536b22212ef69b17b0.png](admin_panel.png)
 
 `Имя: admin Админ: True` - Я под админом.
 
 Здесь веб за 50.
 
-![14f19ae3737ef24942ed5606b40938a2.png](0aaead849121443f9e8fb2ce466acbc6.png)
+![14f19ae3737ef24942ed5606b40938a2.png](flag.png)
 
 Все.
 ### Флаг
