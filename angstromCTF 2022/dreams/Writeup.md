@@ -259,7 +259,7 @@ I started working with the 10th index, because after the 5th index, the metadata
 
 ### Leaking the libc address
 
-Since our read function is accompanied by a write, we cannot read pointers to libc in the `got` table (I remind you that our binary file has full `RELRO` protection).
+Since our read function is accompanied by a write, we cannot read pointers   in the `got` table (I remind you that our binary file has full `RELRO` protection).
 Therefore, we need to search for pointers in sections with allowed writing for data.
 Let's remember about pointers to `stdout`, `stderr`, `stdin` in libc in the `.bss` section.
 ```
@@ -339,3 +339,7 @@ $ cat flag.txt
 actf{hav3_you_4ny_dreams_y0u'd_like_to_s3ll?_cb72f5211336}
 $
 ```
+
+Thank you for your attention, and sorry for my English.
+
+[Exploit source code](https://github.com/TomasGlgg/CTF-Writeups/blob/master/angstromCTF%202022/dreams/exploit.py)
