@@ -59,7 +59,7 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
   exit(1);
 }
 ```
-MAX_DREAMS variable:
+`MAX_DREAMS` variable:
 ```
 .data:0000000000404010                 public MAX_DREAMS
 .data:0000000000404010 MAX_DREAMS      dd 5                    ; DATA XREF: gosleep+6B↑r
